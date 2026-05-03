@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toss App (Head/Tail)</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            height: 100%;
+        }
+        h1{
+         margin: 25px 0 10px 0;   
+        }
+        img{
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .image{
+            object-fit: contain;
+        }
+        button{
+            padding: 10px 35px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Toss App (Head/Tail)</h1>
+    <img src="Pics/head-and-tail-img.jpg" alt="">
+    <button>Toss</button>
+
+
+    <script>
+        let btn = document.querySelector("button");
+        
+        btn.addEventListener("click", () => {
+            let img = document.querySelector("img");
+
+            let random = Math.ceil(Math.random() * 2);
+            console.log(random);
+            img.classList.add("image");
+            if(random === 1){
+                img.src = "Pics/head-img.png";
+            } else{
+                img.src = "Pics/tail-img.png";
+            }
+        });
+    </script>
+</body>
+</html>
